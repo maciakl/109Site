@@ -2,7 +2,7 @@ IS_WINDOWS = (RUBY_PLATFORM =~ /mingw/i) ? true : false
 
 task :build do
     target = "dist"
-    remove_dir(target) if Dir.exists?(target)
+    remove_dir(target) if File.directory?(target)
     mkdir(target)
     cp_r "components", target
     files = FileList["*.html", "*.JPG", "*.png", "*.txt", "*.ico", "*.js", "*.css"].exclude("grunt.js")
