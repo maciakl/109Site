@@ -1,6 +1,9 @@
 IS_WINDOWS = (RUBY_PLATFORM =~ /mingw/i) ? true : false
+WINPATH = "x:/"
+LINPATH = "/remote/msuweb/"
 
 task :build do
+    puts "Running task build to local directory dist/"
     target = "dist"
     remove_dir(target) if File.directory?(target)
     mkdir(target)
@@ -13,13 +16,23 @@ task :build do
 end
 
 task :deploy => [:build] do
-    target = IS_WINDOWS ? "x:/" : "/remote/msuweb/"
+    puts "Running task deploy."
+    target = IS_WINDOWS ? WINPATH : LINPATH
+
+    puts "Destination path is " + target
+    files = FileList[target+"*"].exclude(target+"blog") 
  
-    puts "Deploying site....."
-    #cp_r "dist/components", target
+    puts "Cleaning up destination directory"
+    files.each do |f|
+        rm_rf(f)
+    end
+
+    puts "Deploying files"
     FileList["dist/*"].each do |f|
         cp_r f, target
     end
+
+    puts "Task completed " + Time.now.to_s
 end
 
 task :default => [:build]
