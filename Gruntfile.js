@@ -10,13 +10,19 @@ module.exports = function(grunt) {
     htmllint: {
         files: 'index.html'
     },
-    server: {
-        port: 3000,
-        base: '.'
+    connect: {
+        server: {
+            options: {
+                port: 3000,
+                base: '.'
+            }
+        }
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-html');
-  grunt.registerTask('default', 'server watch');
+  grunt.registerTask('default', ['connect', 'watch']);
 
 };
