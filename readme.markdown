@@ -8,8 +8,8 @@ Setup
 
 Must have:
 
-    * Ruby + Gems
-    * Node.js
+* Ruby + Gems
+* Node.js
 
 To setup the environment:
 
