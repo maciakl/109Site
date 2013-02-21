@@ -4,11 +4,11 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     watch: {
-      files: ['index.html'],
+      files: ['dist/**/*.html'],
       tasks: 'htmllint'
     },
     htmllint: {
-        files: 'index.html'
+        files: 'dist/**/*.html'
     },
     connect: {
         server: {
@@ -23,6 +23,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-html');
-  grunt.registerTask('default', ['connect', 'watch']);
+
+  grunt.registerTask('server', ['connect', 'watch']);
+  grunt.registerTask('default', ['htmllint']);
 
 };

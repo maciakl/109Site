@@ -1,3 +1,6 @@
 dist
-components
+output
+tmp
+content/components
 node_modules
+crash.log
