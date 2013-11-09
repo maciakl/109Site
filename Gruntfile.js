@@ -2,29 +2,26 @@
 module.exports = function(grunt) {
 
   // Project configuration.
-  grunt.initConfig({
-    watch: {
-      files: ['dist/**/*.html'],
-      tasks: 'htmllint'
-    },
-    htmllint: {
-        files: 'dist/**/*.html'
-    },
-    connect: {
-        server: {
-            options: {
-                port: 3000,
-                base: '.'
-            }
+    grunt.initConfig({
+        validation: {
+            files: "dist/~maciakl/**/!(google*).html"
+        },
+    shell:
+    {
+        nanoc: {
+            options: { stdout: true },
+            command: 'nanoc'
         }
+    },
+    watch: {
+        files: "content/**",
+    tasks: ['shell', 'validation'],
     }
-  });
+    });
 
-  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-html');
-
-  grunt.registerTask('server', ['connect', 'watch']);
-  grunt.registerTask('default', ['htmllint']);
+  grunt.loadNpmTasks('grunt-html-validation');
+  grunt.loadNpmTasks('grunt-shell');
+  grunt.registerTask('default', 'validation');
 
 };

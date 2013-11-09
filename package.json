@@ -1,12 +1,16 @@
 {
-  "author": "",
-  "name": "CMPT109",
+  "author": "Luke Maciak",
+  "name": "CMPT109Site",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maciakl/109Site.git"
+  },
   "version": "0.0.1",
   "dependencies": {},
   "devDependencies": {
-    "grunt-html": "~0.3.3",
-    "grunt": "~0.4.0",
-    "grunt-contrib-connect": "~0.1.2",
-    "grunt-contrib-watch": "~0.2.0"
+    "grunt-html-validation": "~0.1.6",
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-shell": "~0.5.0"
   }
 }

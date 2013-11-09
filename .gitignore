@@ -1,6 +1,7 @@
 dist
 output
 tmp
-content/components
 node_modules
 crash.log
+content/components
+validation-*.json
