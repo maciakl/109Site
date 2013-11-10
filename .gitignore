@@ -3,5 +3,5 @@ output
 tmp
 node_modules
 crash.log
-static/components
+content/components
 validation-*.json
