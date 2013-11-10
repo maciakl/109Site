@@ -2,21 +2,8 @@ IS_WINDOWS = (RUBY_PLATFORM =~ /mingw/i) ? true : false
 WINPATH = "x:/"
 LINPATH = "/remote/msuweb/"
 
-#task :build do
-#    puts "Running task build to local directory dist/"
-#    target = "dist"
-#    remove_dir(target) if File.directory?(target)
-#    mkdir(target)
-#    cp_r "components", target
-#    files = FileList["*.html", "*.JPG", "*.png", "*.txt", "*.ico", "*.js", "*.css"].exclude("grunt.js")
-#    
-#    files.each do |f|
-#        cp f, target
-#    end
-#end
-
 task :build do
-    sh "nanoc compile"
+    sh "grunt build"
 end
 
 task :deploy => [:build] do

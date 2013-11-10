@@ -40,6 +40,4 @@ route '*' do
   end
 end
 
-passthrough '/static/*'
-
 layout '*', :erb
