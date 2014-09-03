@@ -52,6 +52,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', ['copy', 'shell', 'validation']);
   grunt.registerTask('server', ['connect', 'watch']);
-  grunt.registerTask('default', 'buidl');
+  grunt.registerTask('default', 'build');
 
 };
