@@ -1,0 +1,9 @@
+# Site settings
+title: CSIT-100
+
+baseurl: "/~maciakl" # the subpath of your site, e.g. /blog/
+url: "http://cs.montclair.edu" # the base hostname & protocol for your site
+
+exclude: ["readme.markdown", "component.json", "grunt.js", "package.json", "node_modules", "Rakefile", "Makefile", "exclude.rsync"]
+# Build settings
+markdown: kramdown
