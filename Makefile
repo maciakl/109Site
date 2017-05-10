@@ -14,4 +14,4 @@ check:
 	@command -v rsync >/dev/null 2>&1 || { echo "ERROR: please install rsync"; exit 1; }
 
 deploy: check
-	rsync --compress --recursive --checksum --delete --itemize-changes --exclude-from exclude.rsync dist/~maciakl/* $(USER)@$(SERVER):$(FOLDER)
+	rsync --compress --recursive --checksum --delete --itemize-changes --exclude-from exclude.rsync _site/~maciakl/* $(USER)@$(SERVER):$(FOLDER)
